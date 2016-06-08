@@ -3,8 +3,10 @@ MAINTAINER rainu <rainu@raysha.de>
 
 ENV INTELLIJ_LINK https://download.jetbrains.com/idea/ideaIU-2016.1.3.tar.gz
 
+#download and extract intelliJ-Ultimate 
 RUN wget $INTELLIJ_LINK -O /tmp/intellij.tar.gz &&\
-	tar -xzvf /tmp/intellij.tar.gz -C /opt/ && mv /opt/$(ls /opt/) /opt/intellij/ &&
+	tar -xzvf /tmp/intellij.tar.gz -C /opt/ && mv /opt/$(ls /opt/) /opt/intellij/ &&\
+	rm /tmp/* &&\
 	rm -rf /opt/intellij/jre/jre && ln -s $JAVA_HOME/jre /opt/intellij/jre/jre
 
 #make home directory for intellij user
