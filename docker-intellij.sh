@@ -13,6 +13,7 @@ HOST_PROFILE="$HOME/.docker/$DOCKER_IMAGE"
 HOST_SSH="$HOME/.ssh/"
 
 INTELLIJ_ARGS=""
+DOCKER_ARGS=""
 
 DOCKER_NAME="intellij-$CUR_USER_ID"
 read -r -d '' DOCKER_RUN_PARAMS <<EOF
@@ -56,6 +57,8 @@ Options:
 		Mount this directory as the maven directory
 	-s, --ssh
 		Mount this directory containing the ssh-key(s)
+	-D, --docker
+		Additional argument to docker command
 	-x, --xarg
 		Argument(s) for the underlying IntelliJ
 '
@@ -82,6 +85,10 @@ readArguments() {
 		    ;;
 		    -x|-xargs)
 		    INTELLIJ_ARGS=$INTELLIJ_ARGS" $2"
+		    shift
+		    ;;
+		    -D|--docker)
+		    DOCKER_ARGS=$DOCKER_ARGS" $2"
 		    shift
 		    ;;
 		    -h|--help)
@@ -113,6 +120,7 @@ if [ "$DOCKER_CONTAINER_EXISTS" == "0" ]; then
 	    --detach \
 	    --name "$DOCKER_NAME" \
 	    $DOCKER_RUN_PARAMS \
+	    $DOCKER_ARGS \
 	    $DOCKER_IMAGE \
 	    $INTELLIJ_ARGS
 else
