@@ -4,6 +4,8 @@
 # Variables
 ####
 
+DOCKER_IMAGE="rainu/intellij"
+
 CUR_USER_ID=$(id -u)
 CUR_USER_GID=$(id -g)
 
@@ -12,7 +14,6 @@ HOST_SSH="$HOME/.ssh/"
 
 INTELLIJ_ARGS=""
 
-DOCKER_IMAGE="rainu/intellij"
 DOCKER_NAME="intellij-$CUR_USER_ID"
 read -r -d '' DOCKER_RUN_PARAMS <<EOF
 --env LANG=$LANG 
