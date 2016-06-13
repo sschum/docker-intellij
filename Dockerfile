@@ -12,6 +12,7 @@ RUN wget -nv $INTELLIJ_LINK -O /tmp/intellij.tar.gz &&\
 #make home directory for intellij user
 RUN export uid=1000 gid=1000 && \
     mkdir -p /home/intellij && \
+    mkdir -p /home/intellij/bin &&\
     mkdir -p /home/intellij/.m2 && \
     echo "intellij:x:${uid}:${gid}:IntelliJ User,,,:/home/intellij:/bin/bash" >> /etc/passwd && \
     echo "intellij:x:${uid}:" >> /etc/group && \
