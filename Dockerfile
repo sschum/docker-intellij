@@ -1,7 +1,7 @@
 FROM java:openjdk-8-jdk
 MAINTAINER rainu <rainu@raysha.de>
 
-ENV INTELLIJ_LINK https://download.jetbrains.com/idea/ideaIU-2016.2.tar.gz
+ENV INTELLIJ_LINK https://download.jetbrains.com/idea/ideaIU-2016.2.1.tar.gz
 
 #download and extract intelliJ-Ultimate 
 RUN wget -nv $INTELLIJ_LINK -O /tmp/intellij.tar.gz &&\
