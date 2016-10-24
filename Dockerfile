@@ -12,7 +12,7 @@ RUN wget -nv $INTELLIJ_LINK -O /tmp/intellij.tar.gz &&\
 
 #download and extract golang
 RUN wget -nv $GOLANG -O /tmp/golang.tar.gz &&\
-	tar -xzvf /tmp/golang.tar.gz -C /usr/lib/ &&\
+	tar -xzvf /tmp/golang.tar.gz -C /usr/local/ &&\
 	rm /tmp/golang.tar.gz
 
 #make home directory for intellij user
