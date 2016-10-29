@@ -4,9 +4,11 @@ MAINTAINER rainu <rainu@raysha.de>
 ENV INTELLIJ_LINK http://download.jetbrains.com/idea/ideaIU-2016.2.5.tar.gz
 ENV GOLANG http://storage.googleapis.com/golang/go1.6.3.linux-amd64.tar.gz
 
+ENV uid 1000
+ENV gid 1000
+
 #make home directory for intellij user
-RUN export uid=1000 gid=1000 && \
-    mkdir -p /home/intellij && \
+RUN mkdir -p /home/intellij && \
     mkdir -p /home/intellij/bin &&\
     mkdir -p /home/intellij/.m2 && \
     echo "intellij:x:${uid}:${gid}:IntelliJ User,,,:/home/intellij:/bin/bash" >> /etc/passwd && \
