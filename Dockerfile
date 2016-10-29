@@ -1,17 +1,18 @@
-FROM java:openjdk-8-jdk
+FROM openjdk:8-jdk-alpine
 MAINTAINER rainu <rainu@raysha.de>
 
-ENV INTELLIJ_LINK https://download.jetbrains.com/idea/ideaIU-2016.2.5.tar.gz
-ENV GOLANG https://storage.googleapis.com/golang/go1.6.3.linux-amd64.tar.gz
+ENV INTELLIJ_LINK http://download.jetbrains.com/idea/ideaIU-2016.2.5.tar.gz
+ENV GOLANG http://storage.googleapis.com/golang/go1.6.3.linux-amd64.tar.gz
 
-#download and extract intelliJ-Ultimate 
-RUN wget -nv $INTELLIJ_LINK -O /tmp/intellij.tar.gz &&\
+#download and extract intelliJ-Ultimate
+RUN wget $INTELLIJ_LINK -O /tmp/intellij.tar.gz &&\
+	mkdir /opt/ &&\
 	tar -xzvf /tmp/intellij.tar.gz -C /opt/ && mv /opt/$(ls /opt/) /opt/intellij/ &&\
 	rm /tmp/intellij.tar.gz &&\
 	rm -rf /opt/intellij/jre/jre && ln -s $JAVA_HOME/jre /opt/intellij/jre/jre
 
 #download and extract golang
-RUN wget -nv $GOLANG -O /tmp/golang.tar.gz &&\
+RUN wget $GOLANG -O /tmp/golang.tar.gz &&\
 	tar -xzvf /tmp/golang.tar.gz -C /usr/local/ &&\
 	rm /tmp/golang.tar.gz
 

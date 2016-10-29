@@ -17,13 +17,13 @@ DOCKER_ARGS=""
 
 DOCKER_NAME="intellij-$CUR_USER_ID"
 read -r -d '' DOCKER_RUN_PARAMS <<EOF
---env LANG=$LANG 
---env LANGUAGE=$LANGUAGE 
+--env LANG=$LANG
+--env LANGUAGE=$LANGUAGE
 --env DISPLAY=$DISPLAY
 --env HOST_USER_UID=$CUR_USER_ID
 --env HOST_USER_GID=$CUR_USER_GID
---volume /tmp/.X11-unix:/tmp/.X11-unix 
---volume $HOST_PROFILE:/home/intellij/.IntelliJIdea2016.1
+--volume /tmp/.X11-unix:/tmp/.X11-unix
+--volume $HOST_PROFILE:/home/intellij/.IntelliJIdea2016.2
 EOF
 
 ####
@@ -100,7 +100,7 @@ readArguments() {
 		esac
 		shift # past argument or value
 	done
-	
+
 	DOCKER_RUN_PARAMS=$DOCKER_RUN_PARAMS" --volume $HOST_SSH:/home/intellij/.ssh/"
 }
 
