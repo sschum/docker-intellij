@@ -12,8 +12,8 @@ RUN mkdir -p /home/intellij && \
     mkdir -p /home/intellij/bin &&\
     mkdir -p /home/intellij/.m2
 
-#install fontconfig
-RUN apk add --no-cache fontconfig
+#install some additional packages
+RUN apk add --no-cache fontconfig git openssh
 
 #download and extract intelliJ-Ultimate
 RUN wget $INTELLIJ_LINK -O /tmp/intellij.tar.gz &&\
