@@ -23,6 +23,8 @@ read -r -d '' DOCKER_RUN_PARAMS <<EOF
 --env HOST_USER_UID=$CUR_USER_ID
 --env HOST_USER_GID=$CUR_USER_GID
 --volume /tmp/.X11-unix:/tmp/.X11-unix
+--volume /usr/share/icons:/usr/share/icons:ro
+--volume /usr/share/fonts:/usr/share/fonts:ro
 --volume $HOST_PROFILE:/home/intellij/.IntelliJIdea2016.2
 EOF
 
