@@ -29,4 +29,4 @@ RUN wget $GOLANG -O /tmp/golang.tar.gz &&\
 
 COPY ./start.sh /home/intellij/start.sh
 
-#ENTRYPOINT ["/home/intellij/start.sh"]
+ENTRYPOINT ["/home/intellij/start.sh"]
