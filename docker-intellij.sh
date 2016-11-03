@@ -9,7 +9,7 @@ DOCKER_IMAGE="rainu/intellij"
 CUR_USER_ID=$(id -u)
 CUR_USER_GID=$(id -g)
 
-HOST_PROFILE="$HOME/.docker/$DOCKER_IMAGE"
+HOST_PROFILE=$(echo "$HOME/.docker/$DOCKER_IMAGE" | sed 's/:/-/g')
 HOST_SSH="$HOME/.ssh/"
 
 INTELLIJ_ARGS=""
