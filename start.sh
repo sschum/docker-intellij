@@ -16,7 +16,7 @@ initialise() {
   echo "$GROUPNAME:x:$HOST_USER_GID:" >> /etc/group
 
   #fix permission
-  chown $USERNAME:$GROUPNAME -R /home/$USERNAME
+  chown $USERNAME:$GROUPNAME /home/$USERNAME
   chown $USERNAME:$GROUPNAME -R /opt/intellij
   chown $USERNAME:$GROUPNAME -R /usr/local/go
 }

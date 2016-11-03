@@ -9,7 +9,6 @@ ENV GROUPNAME intellij
 
 #make home directory for intellij user
 RUN mkdir -p /home/intellij && \
-    mkdir -p /home/intellij/bin &&\
     mkdir -p /home/intellij/.m2
 
 #download and extract intelliJ-Ultimate
