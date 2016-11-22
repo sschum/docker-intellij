@@ -1,7 +1,7 @@
 FROM openjdk:8-jdk-alpine
 MAINTAINER rainu <rainu@raysha.de>
 
-ENV INTELLIJ_LINK http://download.jetbrains.com/idea/ideaIU-2016.2.5.tar.gz
+ENV INTELLIJ_LINK http://download.jetbrains.com/idea/ideaIU-2016.3.tar.gz
 ENV GOLANG http://storage.googleapis.com/golang/go1.6.3.linux-amd64.tar.gz
 
 ENV USERNAME intellij
