@@ -25,7 +25,7 @@ read -r -d '' DOCKER_RUN_PARAMS <<EOF
 --volume /tmp/.X11-unix:/tmp/.X11-unix
 --volume /usr/share/icons:/usr/share/icons:ro
 --volume /usr/share/fonts:/usr/share/fonts:ro
---volume $HOST_PROFILE:/home/intellij/.IntelliJIdea2016.2
+--volume $HOST_PROFILE:/home/intellij/.IntelliJIdea2016.3
 EOF
 
 ####
